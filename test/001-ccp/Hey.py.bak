@@ -1,0 +1,26 @@
+
+import TempM
+import TempM2
+
+def HeyWorld():
+    tmp = TempM.TempM()
+    print("Hey world!", tmp.number)
+    print(tmp.tmp1)
+
+'''
+    tmp2 = TempM2.TempM2()
+    print("Hey world!", tmp2.number, tmp2.tmp1)
+    #tmp21 = tmp2.getTmp1()
+    #print("Hey world!", tmp2.number, tmp21)
+
+def Func(common):
+    print("Func")
+    print(common.tmp1["number"])
+    print(common.tmp2["number"])
+
+def TestDict(dicts):
+    print("test dict")
+    #print(dicts["number"])
+    print(dicts)
+    print(dicts["tmp1"][0])
+'''
