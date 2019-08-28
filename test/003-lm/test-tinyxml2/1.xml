@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <KLine dataPath="/data/quant/kline" stocksFileName="/data/quant/kline/stocks" statusFileName="/data/quant/kline/klinestatus"
+            statusinfoFileName="/data/quant/kline/statusinfo" stocksCount="6100">
+        <KLineStrInfo>
+            <one     pathname="1mkline"  mongotable="history_klines_1_0"     redistable="onekline"     base="242" days="120" years="1" >1 minute k-line info</one>
+            <five    pathname="5mkline"  mongotable="history_klines_5_0"     redistable="fivekline"    base="48"  days="120" years="1" >5 minutes k-line info</five>
+            <fifteen pathname="15mkline" mongotable="history_klines_15_0"    redistable="fifteenkline" base="16"  days="120" years="1" >15 minutes k-line info</fifteen>
+            <thirty  pathname="30mkline" mongotable="history_klines_30_0"    redistable="thirtykline"  base="8"   days="120" years="1" >30 minutes k-line info</thirty>
+            <hour    pathname="1hkline"  mongotable="history_klines_hour_0"  redistable="hourkline"    base="4"   days="120" years="1" >hour k-line info</hour>
+            <day     pathname="dkline"   mongotable="history_klines_day_0"   redistable="daykline"     base="1"   days="252" years="31" >day k-line info</day>
+            <week    pathname="wkline"   mongotable="history_klines_week_1"  redistable="weekkline"    base="1"   days="52"  years="31" >week k-line info</week>
+            <month   pathname="mkline"   mongotable="history_klines_month_1" redistable="monthkline"   base="1"   days="12"  years="31" >month k-line info</month>
+            <year    pathname="ykline"   mongotable="history_klines_year_1"  redistable="yearkline"    base="1"   days="1"   years="31" >year k-line info</year>
+        </KLineStrInfo>
+        <daemon updateInternal=3 heartbeatInternal=300>
+        </daemon>
+    </KLine>
+</Configuration>
