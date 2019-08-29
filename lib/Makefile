@@ -1,28 +1,28 @@
 #****************************************************************************
 #
-# Makefile for test
+# Makefile for clib
 # Henry
 # 2019-08-28
 #
 #****************************************************************************
 
-CC	:= gcc
+CXX	:= g++
 
 INC_LIBS:= 
 INC_HEAD:= 
 INC_SLIB:= 
-CFLAGS:= -Wall -c -fPIC -Wno-deprecated -g $(INC_HEAD) $(INC_SLIB)
+CXXFLAGS:= -Wall -c -fPIC -Wno-deprecated -g $(INC_HEAD) $(INC_SLIB)
 
-BIN_SOURCES = $(shell ls *.c)
-BIN_OBJECTS = $(BIN_SOURCES:.c=.o)
+BIN_SOURCES = $(shell ls hl*.cpp)
+BIN_OBJECTS = $(BIN_SOURCES:.cpp=.o)
 BIN_CCFLAGS:= -Wall -fPIC -Wno-deprecated -g $(INC_HEAD) $(INC_SLIB)
 
 BIN_PATH := ./
 BIN		 := test
 
 .PHONY: test
-test:$(BIN_OBJECTS)
-	$(CC) $(INC_LIBS) -o $(BIN_PATH)/$@ $(BIN_OBJECTS) $(BIN_CCFLAGS)
+test:$(BIN_OBJECTS) test.o
+	$(CXX) $(INC_LIBS) -o $(BIN_PATH)/$@ $(BIN_OBJECTS) $(BIN_CCFLAGS) test.o
 
 .PHONY: clean
 clean:
