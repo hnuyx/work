@@ -13,13 +13,13 @@ void test_hlsl_list()
 
     HLSList list = {0};
     HLSLElem *elem;
-    while(elem = hlsl_get_free_elem_from_pool())
+    while((elem = hlsl_get_free_elem_from_pool()))
     {
         elem->value = ++ i;
         hlsl_push_back(&list, elem);
     }
 
-    while(elem = hlsl_pop_front(&list))
+    while((elem = hlsl_pop_front(&list)))
     {
         printf("%d ", elem->value);
         hlsl_free_elem_to_pool(elem);
