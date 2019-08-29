@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+        <mysql host="127.0.0.1" user="root" passwd="123456" database="databasename" port="3306"></mysql>
+        <redis redisHostIP="127.0.0.1" redisHostPort="6379" redisHostPassword="123456" redisHostDatabase="1"></redis>
+</Configuration>
