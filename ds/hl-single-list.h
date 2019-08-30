@@ -4,18 +4,18 @@
  * base template of list for c
  * */
 
-#ifndef __HL_SIGLE_LIST_H__
-#define __HL_SIGLE_LIST_H__
+#ifndef __HL_SINGLE_LIST_H__
+#define __HL_SINGLE_LIST_H__
 
 #pragma pack(push, 4)
-// sigle-linked list element
+// single-linked list element
 typedef struct _HL_SL_ELEM
 {
     int value;
     struct _HL_SL_ELEM *next;
 } HLSLElem;
 
-// sigle-linked list
+// single-linked list
 typedef struct _HL_SLIST
 {
     HLSLElem *head;
@@ -51,7 +51,7 @@ int hlsl_init_pool();
 HLSLElem* hlsl_get_free_elem_from_pool();
 
 /* free single-linked list element
- * elem: sigle-linked list element
+ * elem: single-linked list element
  *
  * return 0 for success, -1 for failed
  * */

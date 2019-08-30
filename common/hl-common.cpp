@@ -7,6 +7,9 @@
 
 #include "hl-common.h"
 
+// time size
+#define HL_TIME_MAX_SIZE                    16
+
 // get now time, YYYYMMDDHHMMSS
 uint64_t get_now()
 {

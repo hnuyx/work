@@ -5,11 +5,11 @@
 
 #include <stdio.h>
 
-#include "hl-sigle-list.h"
+#include "hl-single-list.h"
 
-#define HL_SIGLE_LIST_ELEMENT_MAX_SIZE   100
+#define HL_SINGLE_LIST_ELEMENT_MAX_SIZE   100
 
-HLSLElem g_pool_hlsl_elems[HL_SIGLE_LIST_ELEMENT_MAX_SIZE] = {0};
+HLSLElem g_pool_hlsl_elems[HL_SINGLE_LIST_ELEMENT_MAX_SIZE] = {0};
 
 static HLSList pool = {0};
 
@@ -63,8 +63,8 @@ HLSLElem* hlsl_pop_front(HLSList *list)
 int hlsl_init_pool()
 {
     pool.head = &g_pool_hlsl_elems[0];
-    pool.tail = &g_pool_hlsl_elems[HL_SIGLE_LIST_ELEMENT_MAX_SIZE - 1];
-    for(int i = 1; i < HL_SIGLE_LIST_ELEMENT_MAX_SIZE; i ++)
+    pool.tail = &g_pool_hlsl_elems[HL_SINGLE_LIST_ELEMENT_MAX_SIZE - 1];
+    for(int i = 1; i < HL_SINGLE_LIST_ELEMENT_MAX_SIZE; i ++)
     {
         g_pool_hlsl_elems[i - 1].next = &g_pool_hlsl_elems[i];
     }
@@ -83,7 +83,7 @@ HLSLElem* hlsl_get_free_elem_from_pool()
 }
 
 /* free single-linked list element
- * elem: sigle-linked list element
+ * elem: single-linked list element
  *
  * return 0 for success, -1 for failed
  * */

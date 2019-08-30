@@ -34,19 +34,19 @@ public:
      * */
     redisContext* connect();
 
-    // options
-    HLRedisOpt options;
-
     /* read options
      * filename: opstions file-name
      * */
     int read_options(const char *filename);
 
-    // xml 
-    tinyxml2::XMLDocument doc;
+    // options
+    HLRedisOpt options;
 
 private:
     redisContext *ctx;
+
+    // xml 
+    tinyxml2::XMLDocument doc;
 };
 
 #endif

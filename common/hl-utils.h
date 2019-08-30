@@ -10,11 +10,6 @@
 
 #include <string.h>
 
-#include <easylogging++.h>
-#include <LogHelper.h>
-
-#define DEBUG_OUTPUT  0
-
 #define HL_CHECK_RESULT_RETURN_VOID(r,e,s) \
     if (r == e) {              \
         printf("%s\n", s);     \
@@ -36,9 +31,6 @@
 #define HL_XFREE(b) \
     if (b) free(b); \
     b = NULL;
-
-#define Hl_FILE_MAX_SIZE       10240
-#define HL_LOG_BUFFER_SIZE     1024
 
 /**
  * copy file

@@ -20,8 +20,6 @@
 #define HL_YEAR_SECONDS                     (365 * HL_DAY_SECONDS)
 // monday base: 1990-01-01 00:00:00
 #define HL_MONDAY_BASE                      631123200
-// time size
-#define HL_TIME_MAX_SIZE                    16
 
 class HLAutoLocker
 {
@@ -48,7 +46,6 @@ uint32_t get_date(time_t t);
 
 // get t time, YYYYMMDDHHMMSS
 uint64_t get_time(time_t t);
-
 
 // same day
 bool is_same_day(uint64_t t1, uint64_t t2);
