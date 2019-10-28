@@ -13,26 +13,26 @@ def HeyWorld():
     tlist = TempM2.tmplist()
     print("Hey world!")
 
-    '''
-    for i in tlist:
-        print(i.number)
+    #for i in tlist:
+    #    print(i.number)
 
-    for i in tlist:
-        print(i.number)
-    '''
+    #for i in tlist:
+    #    print(i.number)
 
-    a = {1,2}
-    #print(a)
+    #a = [1,2]
+    #a = {1,2}
+    ##print(a)
     tmp1 = TempM2.tmp1()
     #tmp1.helloFunc(a, 1,2, "2")
-    #tmp1.heyFunc(address="address192.168.1.1")
-    #tmp1.heyFunc(address="address192.168.1.1", abi="abi", types=1)
-    #tmp1.heyFunc(address="address192.168.1.1", abi="abi", value=100.0, types=1)
+    ##tmp1.heyFunc(address="address192.168.1.1")
+    ##tmp1.heyFunc(address="address192.168.1.1", abi="abi", types=1)
+    ##tmp1.heyFunc(address="address192.168.1.1", abi="abi", value=100.0, types=1)
     tmp1.heyFunc(address="address192.168.1.1", abi="abi", value=100.0, types=1, li=["1","2","3"])
+    #tmp1.heyFunc(address="address192.168.1.1", abi="abi", value=100.0, types=1, li="1")
 
-    print(tmp1.number)
-    print(tmp1.numa)
-    print(tmp1.numb)
+    #print(tmp1.number)
+    #print(tmp1.numa)
+    #print(tmp1.numb)
 
     #print(tmp1)
     '''

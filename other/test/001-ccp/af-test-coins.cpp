@@ -31,8 +31,10 @@ int getN(int n, int size)
             {
                 if(ret[t] == 0)
                     ret[t] = ret[f] + 1;
+                else if(ret[f]+1 < ret[t])
+                    ret[t] = ret[f] + 1;
                 else
-                    ret[t] = min(ret[t], ret[f]+1);
+                    continue;
     
                 q.push(t);
             }

@@ -22,9 +22,9 @@ def v_init():
     return pickle.dumps(t)
 
 def v_use(tstr):
-    print("SD.py tstr:", tstr)
+    #print("SD.py tstr:", tstr)
     t = pickle.loads(tstr)
-    use(t)
+    #use(t)
 
 
 if __name__ == '__main__':
