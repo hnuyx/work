@@ -1,0 +1,13 @@
+
+## 说明：
+IntLogger.h IntLogger.cpp 源文件  
+test.cpp 测试代码：一个线程写入文件，十个线程写日志
+
+线程由使用者申请和删除。
+
+## 编译:
+`make`
+
+## 测试
+`./test`
+

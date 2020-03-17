@@ -21,6 +21,12 @@ using bsoncxx::builder::stream::document;
 using bsoncxx::builder::stream::finalize;
 using bsoncxx::builder::stream::open_array;
 using bsoncxx::builder::stream::open_document;
+using bsoncxx::v_noabi::type;
+
+#define LM_MONGODB_GET_DOULBLE(x)    (((x).type() ==  type::k_double) ?  (x).get_double() : std::stod((x).get_utf8().value.to_string()))
+
+#define LM_UINT32_PX(x) (uint32_t)((x) * 1000)
+#define LM_DOUBLE_PX(x) (double)((x) * 1.0 / 100.0)
 
 int main()
 {
@@ -31,7 +37,7 @@ int main()
     mongocxx::client client(uri);
 
     mongocxx::database db = client["kline"];
-    mongocxx::collection coll = db["history_klines_1_0"];
+    mongocxx::collection coll = db["history_klines_day_0"];
     //mongocxx::collection coll = db["history_klines_day_0"];
     //mongocxx::collection coll = db["history_klines_year_0"];
     mongocxx::collection exrt_coll = db["exrights"];
@@ -54,6 +60,8 @@ int main()
 
     double open, high, low, close, prev;
     uint64_t time, amount, balance;
+    uint32_t highu32;
+    double highd;
 
     auto sort = bsoncxx::builder::basic::make_document(bsoncxx::builder::basic::kvp("date", 1));
     mongocxx::options::find opts;
@@ -65,7 +73,7 @@ int main()
     bsoncxx::array::view aa1;
 
     bool is_exrt = false;
-    const char *filter_exrt = "{\"_id\": \"600572.SS\"}";
+    const char *filter_exrt = "{\"_id\": \"300227.SZ\"}";
     auto ret = exrt_coll.find(bsoncxx::from_json(filter_exrt));
     for(auto doc : ret)
     {
@@ -77,7 +85,7 @@ int main()
 
     //const char *filter = "{\"date\": {\"$lte\": \"20190628\", \"$gte\": \"20190628\"}, \"stock_code\": \"600572.SS\"}";
     //const char *filter = "{\"date\": {\"$lte\": \"20190628\", \"$gte\": \"0\"}, \"stock_code\": \"600572.SS\"}";
-    const char *filter = "{\"date\": {\"$lte\": \"20190628\", \"$gte\": \"0\"}, \"stock_code\": \"600290.SS\"}";
+    const char *filter = "{\"date\": {\"$lte\": \"20200226\", \"$gte\": \"20200220\"}, \"stock_code\": \"300227.SZ\"}";
     auto cursor = coll.find(bsoncxx::from_json(filter), opts);
 
 #if 0
@@ -120,12 +128,15 @@ int main()
             time    = std::stoul(doc["date"].get_utf8().value.to_string());
             open    = doc["open_px"].get_double();
             high    = doc["high_px"].get_double();
+            highd = LM_MONGODB_GET_DOULBLE(doc["high_px"]);
+            highu32 = LM_UINT32_PX(LM_MONGODB_GET_DOULBLE(doc["high_px"]));
             low     = doc["low_px"].get_double();
             close   = doc["close_px"].get_double();
             amount  = doc["business_amount"].get_int64();
             balance = doc["business_balance"].get_int64();
             printf("%lf %lf %lf %lf %lf %lu %lu %lu\n",
                    open, high, low, close, prev, time, amount, balance);
+            printf("high %f-%u\n", highd, highu32);
         }
 
 

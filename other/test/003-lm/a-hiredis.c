@@ -9,7 +9,7 @@
     if (r == e) { printf("%s\n", s); return t; }
 
 #define ADJUST_TIME(se,ue,us) \
-    if (ue < us) { us += 1000000; se -= 1; }
+    if (ue < us) { ue += 1000000; se -= 1; }
 
 #define REAL_DATA 1
 
