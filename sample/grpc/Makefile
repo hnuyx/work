@@ -24,13 +24,18 @@ ARLIB	:= libtdgrpc.a
 SOURCES = $(shell ls *.cc)
 OBJECTS = $(SOURCES:.cc=.o)
 
-BIN_SOURCES = $(shell ls *.cpp)
-BIN_OBJECTS = $(BIN_SOURCES:.cpp=.o) $(OBJECTS)
+CLIENT_SOURCES = client.cpp
+CLIENT_OBJECTS = $(CLIENT_SOURCES:.cpp=.o) $(OBJECTS)
+
+SERVER_SOURCES = server.cpp
+SERVER_OBJECTS = $(SERVER_SOURCES:.cpp=.o) $(OBJECTS)
+
 BIN_CXXFLAGS:= -Wall -fPIC -Wno-deprecated -g $(INC_HEAD) $(INC_SLIB)
 BIN_CXXFLAGS += `pkg-config --libs protobuf grpc++` -lgrpc++_reflection
 
 BIN_PATH := ./
-BIN		 := test
+CLIENT		:= client
+SERVER		:= server
 
 .PHONY: all
 all:$(OUTPUT)
@@ -40,9 +45,13 @@ $(OUTPUT):$(OBJECTS)
 	$(AR) $(ARLIB) $(OBJECTS) 
 
 
-.PHONY: test
-test:$(BIN_OBJECTS)
-	$(CXX) $(INC_LIBS) -o $(BIN_PATH)/$@ $(BIN_OBJECTS) $(BIN_CXXFLAGS)
+.PHONY: client
+client:$(CLIENT_OBJECTS)
+	$(CXX) $(INC_LIBS) -o $(BIN_PATH)/$@ $(CLIENT_OBJECTS) $(BIN_CXXFLAGS)
+
+.PHONY: server
+server:$(SERVER_OBJECTS)
+	$(CXX) $(INC_LIBS) -o $(BIN_PATH)/$@ $(SERVER_OBJECTS) $(BIN_CXXFLAGS)
 
 
 PROTOC = protoc
@@ -64,4 +73,4 @@ clean:
 
 .PHONY: cleanall
 cleanall:
-	rm -f *.so *.o *~ $(OUTPUT) $(ARLIB) $(LIBSPATH)/$(OUTPUT) $(BIN_PATH)/$(BIN)
+	rm -f *.so *.o *~ $(OUTPUT) $(ARLIB) $(LIBSPATH)/$(OUTPUT) $(BIN_PATH)/$(CLIENT)
