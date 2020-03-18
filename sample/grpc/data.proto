@@ -1,0 +1,26 @@
+
+syntax = "proto3";
+
+package tdpkg;
+
+message DataReq {
+    int32  ra = 1;
+    uint32 rb = 2;
+    string rc = 3;
+}
+
+message Data {
+    int64  da  = 1;
+    uint64 db  = 2;
+    int32  dc  = 3;
+    uint32 dd  = 4;
+    string de  = 5;
+}
+
+message DataResp {
+    int32  rsa = 1;
+    uint32 rsb = 2;
+    string rsc = 3;
+    repeated Data datas = 7; 
+}
+

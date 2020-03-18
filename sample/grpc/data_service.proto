@@ -1,0 +1,12 @@
+
+syntax = "proto3";
+
+package tdpkg;
+
+import "data.proto";
+
+service DataService {
+    rpc GetData(DataReq) returns (DataResp) {} 
+}
+
+
