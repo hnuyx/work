@@ -1,6 +1,5 @@
 
 #include <stdio.h>
-
 #include <string>
 using namespace std;
 
@@ -18,8 +17,9 @@ int main()
 
     for (int i = 0; i < 10; i ++)
     {
-        T *t = (T *) malloc(sizeof(T));
+        T *t = new T();
         t->a.assign(b);
+        printf("t.a: %s\n", t->a.c_str());
         free(t);
     }
 
