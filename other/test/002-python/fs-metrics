@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta charset="utf-8"><meta name="keywords" content="ETF指数,港股,基本面选股,看财报,机构持股,历史市盈率,历史市净率,股息率,市销率,沪深300,中证500,上证50,中证1000,创业板指,中小板指,PB,PE,PS,PEG,历史估值,等权平均值,中位数"><meta name="description" content="理杏仁定位于投资者的金融数据中心，为投资者提供专业的数据服务。提供A股、B股、港股、美股以及行业、指数等历史估值数据、财报数据、博弈数据、估值工具、财报可视化、基本面选股等等功能。"><title>理杏仁 — 独立思考、理性投资</title><link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon"><link rel="icon" href="/static/img/favicon.ico" type="image/x-icon"><base href="/analytics/company/"></head><body ng-controller="HomeCtrl" ng-class="pageClasses" class="wf-page page-undefined"><wf-header ng-if="!false" change-lang="changeLang" logout="logout" login="login" is-from-mobile="undefined"></wf-header><div class="wf-body"><div class="container"><div id="app" ui-view><P>加载中…… </P></div></div></div><wf-footer ng-if="!false"></wf-footer><div wf-back-to-top speed="800"></div><script type="text/javascript">var __wf = {
+    authCallbackConfig: {
+        success: function() {},
+        cancel: function() {}
+    },
+    appVersion: '4.8.73',
+    needClearLocalStorage: false
+};
+
+function start() {
+    alert('如果您看见了这个，那么意味您当前这个浏览器不支持【理杏仁】软件的运行或者文件还没下载完（请耐心等待一下）。目前官方测试过的有Chrome、Firefox、以及Microsoft Edge，低版本的IE、360、搜狗一类浏览器将不再测试。我们强烈建议使用Chrome或者Firefox。');
+}
+
+// for baidu analytics
+var _hmt = _hmt || [];
+_hmt.push(['_setAutoPageview', false]);
+//- (function() {
+//-     var hm = document.createElement("script");
+//-     hm.src = "//hm.baidu.com/hm.js?ec0ee7e5c8bed46d4fdf3f338afc08f5";
+//-     var s = document.getElementsByTagName("script")[0]; 
+//-     s.parentNode.insertBefore(hm, s);
+//- })();</script><script type="text/javascript" src="/static/vendor.js?v=4.8.73"></script><script type="text/javascript" src="/static/bundle.js?v=4.8.73"></script></body></html>

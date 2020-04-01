@@ -11,16 +11,16 @@ def handle_bar(uctx):
     #context.log(ret)
 
     #ret = getHKL2(1700, '00700.HK')
-    ret = getHKL2N(1700, '00700.HK', 10)
-    context.log(ret)
+    #ret = getHKL2N(1700, '00700.HK', 10)
+    #context.log(ret)
 
     #ret = getL2DayDetails(20191025, '600000.SS')
     #ret = getL2DayDetailsMid(20191025, '600000.SS')
     #ret = getL2DayDetailsMinute(1300, '600000.SS')
     #ret = getL2LastNDay(20191025, '600000.SS', 10)
     #ret = getL2LastNDayDetailsMid(20191025, '600000.SS', 10)
-    #ret = getL2LastNDayDetailsMinute(1300, '600000.SS', 10)
-    #context.log(ret)
+    ret = getL2LastNMinute(1000, '600000.SS', 10)
+    context.log("be here", ret)
     #context.log(len(ret))
 
     #ret = getL2DayDetails(20191025, '600000.SS')

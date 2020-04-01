@@ -1,0 +1,10 @@
+<!--doc comment-->
+<config>
+    <opt1 name1="value1" name2="333"/>
+    <opt2 name1="value2" name2="666"/>
+</config>
+
+<opt>
+    <opt3 name1="value3" name2="999">opt-3</opt3>
+    <opthello name1="value4" name2="888"/>
+</opt>

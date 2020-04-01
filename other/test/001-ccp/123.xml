@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <opt1 name1="value1" name2="666">option-1</opt1>
+    <opt2 name1="value2" name2="333">option-2</opt2>
+</config>
+<opt name1="value0" name2="999">
+    <opt3 name1="value3" name2="888">option-3</opt3>
+    <opt4 name1="value4" name2="777">option-4</opt4>
+</opt>
